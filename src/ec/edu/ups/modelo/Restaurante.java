@@ -5,13 +5,14 @@
  */
 package ec.edu.ups.modelo;
 
+import ec.edu.ups.interfaz.Interfaz;
 import java.util.Date;
 
 /**
  *
  * @author Domenika Delgado
  */
-public final class Restaurante extends Edificio { 
+public final class Restaurante extends Edificio implements Interfaz{ 
     
    //Atributos de la clase Hija Restaurante
     private int numeroMesa;
@@ -105,6 +106,16 @@ public final class Restaurante extends Edificio {
     }
 
     
+    //Implementacion de los Metodos Abstractos del Paquete ec.edu.ups.interfaz (Clase Interfaz)
+    @Override
+    public String ubicacion() {
+        return "Ubicacion " + super.getDireccion();
+    }
+    
+    @Override
+    public String informacion() {
+        return "Nombre "+ super.getNombredueno();
+    }
     
 }
 
