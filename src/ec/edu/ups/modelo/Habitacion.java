@@ -10,9 +10,10 @@ package ec.edu.ups.modelo;
  * @author Domenika Delgado
  */
 
+import ec.edu.ups.interfaz.Interfaz;
 import java.util.Date;
 
-public final class Habitacion extends Edificio { 
+public final class Habitacion extends Edificio implements Interfaz { 
     
    //Atributos de la clase Hija Habitacion
     private int numeroCuarto;
@@ -110,7 +111,16 @@ public final class Habitacion extends Edificio {
     }
 
     
-    
+    //Implementacion de los Metodos Abstractos del Paquete ec.edu.ups.interfaz (Clase Interfaz)
+    @Override
+    public String ubicacion() {
+        return "Nombre "+ super.getDireccion();
+    }
+
+    @Override
+    public String informacion() {
+       return "Nombre " + super.getPersonaEncargada();
+    }
     
 }
 
