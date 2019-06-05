@@ -5,13 +5,14 @@
  */
 package ec.edu.ups.modelo;
 
+import ec.edu.ups.interfaz.Interfaz;
 import java.util.Date;
 
 /**
  *
  * @author Domenika Delgado
  */
-public final class Cliente extends Persona { 
+public final class Cliente extends Persona implements Interfaz { 
     
     //Atributos de la clase Hija Cliente
     private int codigoCliente;
@@ -106,5 +107,15 @@ public final class Cliente extends Persona {
         return false;
     }
 
-    
+    //Implementacion de los Metodos Abstractos del Paquete ec.edu.ups.interfaz (Clase Interfaz)
+    @Override
+    public String ubicacion() {
+        return "Ubicacion " + super.getNombreEmpresa();
+        
+    }
+
+    @Override
+    public String informacion() {
+        return "Nombre "+ super.getNombre() + super.getApellido();
+    }
 }
